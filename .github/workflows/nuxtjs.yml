@@ -68,8 +68,33 @@ jobs:
           key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
+      - name: Detect package manager and lock files
+        id: detect-lockfiles
+        run: |
+          LOCKFILES=()
+          [ -f package-lock.json ] && LOCKFILES+=("npm")
+          [ -f yarn.lock ] && LOCKFILES+=("yarn")
+          [ -f pnpm-lock.yaml ] && LOCKFILES+=("pnpm")
+          if [ ${#LOCKFILES[@]} -gt 1 ]; then
+            echo "Error: Multiple lock files detected (${LOCKFILES[*]}). Please use only one package manager."
+            exit 1
+          fi
+          if [ "${LOCKFILES[0]}" = "pnpm" ]; then
+            echo "Error: pnpm is not supported by this workflow."
+            exit 1
+          fi
+          echo "manager=${LOCKFILES[0]}" >> $GITHUB_OUTPUT
+
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: |
+          if [ "${{ steps.detect-lockfiles.outputs.manager }}" = "npm" ]; then
+            npm ci
+          elif [ "${{ steps.detect-lockfiles.outputs.manager }}" = "yarn" ]; then
+            yarn install --frozen-lockfile
+          else
+            echo "Error: No supported lock file found (npm or yarn)."
+            exit 1
+          fi
       - name: Static HTML export with Nuxt
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
       - name: Upload artifact
