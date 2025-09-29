@@ -1,0 +1,7 @@
+messages:
+  - role: system
+    content: You are a helpful assistant that breaks down action items from a meeting
+  - role: user
+    content: 'Pull out the action items from this meeting transcript: {{input}}'
+model: openai/gpt-5-chat
+responseFormat: json_object
