@@ -5,16 +5,16 @@ specifiers:
   '@testing-library/react': ^13.4.0
   '@testing-library/user-event': ^14.4.3
   react: ^18.2.0
-  react-dom: ^18.2.0
+  react-dom: ^19.2.0
   react-scripts: 5.0.1
   web-vitals: ^3.0.4
 
 dependencies:
   '@testing-library/jest-dom': 5.16.5
-  '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+  '@testing-library/react': 13.4.0_nki42fzjtltszqv6skoy2k7dvi
   '@testing-library/user-event': 14.4.3
   react: 18.2.0
-  react-dom: 18.2.0_react@18.2.0
+  react-dom: 19.2.0_react@18.2.0
   react-scripts: 5.0.1_react@18.2.0
   web-vitals: 3.0.4
 
@@ -2214,7 +2214,7 @@ packages:
       redent: 3.0.0
     dev: false
 
-  /@testing-library/react/13.4.0_biqbaboplfbrettd7655fr4n2y:
+  /@testing-library/react/13.4.0_nki42fzjtltszqv6skoy2k7dvi:
     resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -2225,7 +2225,7 @@ packages:
       '@testing-library/dom': 8.19.0
       '@types/react-dom': 18.0.8
       react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      react-dom: 19.2.0_react@18.2.0
     dev: false
 
   /@testing-library/user-event/14.4.3:
@@ -8201,14 +8201,13 @@ packages:
       - vue-template-compiler
     dev: false
 
-  /react-dom/18.2.0_react@18.2.0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom/19.2.0_react@18.2.0:
+    resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^19.2.0
     dependencies:
-      loose-envify: 1.4.0
       react: 18.2.0
-      scheduler: 0.23.0
+      scheduler: 0.27.0
     dev: false
 
   /react-error-overlay/6.0.11:
@@ -8635,10 +8634,8 @@ packages:
       xmlchars: 2.2.0
     dev: false
 
-  /scheduler/0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
-    dependencies:
-      loose-envify: 1.4.0
+  /scheduler/0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
     dev: false
 
   /schema-utils/2.7.0:
