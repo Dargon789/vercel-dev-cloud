@@ -24,7 +24,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.0",
-    "cookie": "^0.4.1",
+    "cookie": "^1.0.2",
     "web-vitals": "^2.1.4"
   }
 }
